@@ -34,12 +34,14 @@ app.get('/kkaif0035_gmail_com', (req, res) => {
   const y = parseNatural(req.query.y);
 
   if(x === null || y === null) {
-    return res.type('text/plain').send("NaN");
+    res.set("Content-Type", "text/plain");
+    return res.send("NaN"); 
   }
 
   const lcm = (x * y) / gcd(x, y);
 
-  res.type('text/plain').send(lcm.toString());
+  res.set("Content-Type", "text/plain");
+  res.send(lcm.toString());
 
 })
 
