@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.get('/kkaif0035_gmail_com/lcm', (req, res) => {
+app.get('/kkaif0035_gmail_com', (req, res) => {
   const x = parseNatural(req.query.x);
   const y = parseNatural(req.query.y);
 
