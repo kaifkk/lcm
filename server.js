@@ -16,13 +16,19 @@ function parseNatural(value) {
     return null;
   }
 
-  const n = BigInt(value);
-
-  if(n <= 0n) {
+  if (!/^\d+$/.test(value)) {
     return null;
   }
 
-  return n;
+  try {
+    const n = BigInt(value);
+    if (n <= 0n) {
+      return null;
+    }
+    return n;
+  } catch {
+    return null;
+  }
 }
 
 app.get('/', (req, res) => {
