@@ -39,7 +39,7 @@ app.get('/kkaif0035_gmail_com', (req, res) => {
 
   const lcm = (x * y) / gcd(x, y);
 
-  res.type('text/plain').send(String(lcm));
+  res.type('text/plain').send(lcm.toString());
 
 })
 
